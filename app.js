@@ -1,6 +1,7 @@
 import LandingPageComponent from './components/landing-page-component.js';
 import AboutPageComponent from './components/about-page-component.js';
 import NavbarComponent from './components/navbar-component.js';
+import FooterComponent from './components/footer-component.js';
 import CollectionPageComponent from './components/collection-page-component.js';
 import ItemDetailPageComponent from './components/item-detail-page-component.js';
 
@@ -20,6 +21,7 @@ const routes = [
   {
     path: '/items/:id',
     component: ItemDetailPageComponent,
+    props: true,
   },
 ];
 
@@ -84,6 +86,38 @@ const app = Vue.createApp({
 });
 
 app.component('navbar-component', NavbarComponent);
+app.component('site-footer-component', FooterComponent);
 
 app.use(router);
 app.mount('#app');
+
+function initScrollReveal() {
+  const targets = document.querySelectorAll('.section, .hero');
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (prefersReduced || !('IntersectionObserver' in window)) {
+    targets.forEach((el) => el.classList.add('reveal', 'in-view'));
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15, rootMargin: '0px 0px -60px 0px' },
+  );
+
+  targets.forEach((el) => {
+    el.classList.add('reveal');
+    observer.observe(el);
+  });
+}
+
+router.afterEach(() => {
+  Vue.nextTick(initScrollReveal);
+});
