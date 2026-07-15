@@ -3,7 +3,7 @@ export default {
   inject: ['itemsStore'],
   computed: {
     featured() {
-      return this.itemsStore.items.slice(0, 3);
+      return this.itemsStore.items.slice(0, 4);
     },
   },
   template: `
@@ -11,6 +11,7 @@ export default {
       <!-- HERO -->
       <section class="hero">
         <div class="hero-sash" aria-hidden="true"></div>
+        <img src="./assets/images/MSCI-Logo.png" alt="Miss Central Indiana &amp; Miss White River crest" class="hero-logo-right" />
         <div class="container position-relative">
           <div class="row">
             <div class="col-lg-9">
@@ -155,13 +156,9 @@ export default {
               </p>
             </div>
             <div class="col-lg-5 text-lg-end">
-              <a
-                class="btn btn-outline-velvet btn-lg"
-                href="https://misscentralindiana.weebly.com/uploads/1/1/9/8/119815556/shining_star_one_page_infographic__1_.pdf"
-                target="_blank"
-                rel="noopener">
-                View Shining Star Application
-              </a>
+              <router-link class="btn btn-outline-velvet btn-lg" to="/shining-stars">
+                Learn More &amp; Apply
+              </router-link>
             </div>
           </div>
         </div>
@@ -188,7 +185,7 @@ export default {
             {{ itemsStore.error }}
           </div>
           <div v-else class="row g-4 mt-1">
-            <div class="col-md-4" v-for="item in featured" :key="item.id">
+            <div class="col-sm-6 col-lg-3" v-for="item in featured" :key="item.id">
               <router-link :to="'/items/' + item.id" class="text-decoration-none text-reset">
                 <div class="titleholder-card sash-corner" :data-sash="item.category">
                   <img :src="item.imageUrl" class="collection-card-image" :alt="item.name" loading="lazy" />

@@ -4,6 +4,11 @@ import NavbarComponent from './components/navbar-component.js';
 import FooterComponent from './components/footer-component.js';
 import CollectionPageComponent from './components/collection-page-component.js';
 import ItemDetailPageComponent from './components/item-detail-page-component.js';
+import ShiningStarsPageComponent from './components/shining-stars-page-component.js';
+import TeamPageComponent from './components/team-page-component.js';
+import AlumniPageComponent from './components/alumni-page-component.js';
+import DonorsPageComponent from './components/donors-page-component.js';
+import DonatePageComponent from './components/donate-page-component.js';
 
 const routes = [
   {
@@ -22,6 +27,26 @@ const routes = [
     path: '/items/:id',
     component: ItemDetailPageComponent,
     props: true,
+  },
+  {
+    path: '/shining-stars',
+    component: ShiningStarsPageComponent,
+  },
+  {
+    path: '/team',
+    component: TeamPageComponent,
+  },
+  {
+    path: '/alumni',
+    component: AlumniPageComponent,
+  },
+  {
+    path: '/donors',
+    component: DonorsPageComponent,
+  },
+  {
+    path: '/donate',
+    component: DonatePageComponent,
   },
 ];
 

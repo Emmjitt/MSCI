@@ -56,7 +56,7 @@ export default {
 
               <div class="d-flex flex-wrap gap-3 mt-4">
                 <router-link to="/items" class="btn btn-outline-plum">See More Titleholders</router-link>
-                <a class="btn btn-gold" href="mailto:info@misscentralindiana.org">Book an Appearance</a>
+                <a class="btn btn-gold" href="mailto:misscentralindiana23@gmail.com">Book an Appearance</a>
               </div>
             </div>
           </div>

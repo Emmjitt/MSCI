@@ -200,7 +200,7 @@ export default {
               </p>
             </div>
             <div class="col-lg-5 text-lg-end">
-              <a class="btn btn-gold btn-lg" href="mailto:info@misscentralindiana.org">
+              <a class="btn btn-gold btn-lg" href="mailto:misscentralindiana23@gmail.com">
                 <i class="bi bi-envelope me-2"></i>Email the Directors
               </a>
             </div>

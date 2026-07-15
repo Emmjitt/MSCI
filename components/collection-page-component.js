@@ -25,6 +25,7 @@ export default {
     <div>
       <section class="hero" style="padding: 4rem 0 3.5rem;">
         <div class="hero-sash" aria-hidden="true"></div>
+        <img v-if="activeCategory === 'All'" src="./assets/images/titleholders-2026-group.png" alt="Class of 2025-2026 titleholders group photo" class="hero-logo-right hero-photo-framed" />
         <div class="container position-relative">
           <p class="eyebrow" style="color: var(--gold-400);">The Class of 2025&ndash;2026</p>
           <h1 class="mt-3 mb-3" style="font-size: clamp(2rem, 4vw, 3rem);">Meet Our Titleholders</h1>
@@ -74,7 +75,7 @@ export default {
                         <i class="bi bi-geo-alt"></i> {{ item.location }}
                       </div>
                       <p class="collection-description">{{ item.description }}</p>
-                      <span class="btn btn-outline-plum btn-sm mt-3 align-self-start">Read Her Story</span>
+                      <span class="btn btn-outline-plum btn-sm mt-3 align-self-start">View Profile</span>
                     </div>
                   </div>
                 </router-link>

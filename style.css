@@ -2,11 +2,11 @@
    Design tokens
    ========================================================================== */
 :root {
-  /* Brand palette — velvet & gold, matching the site favicon/brand mark */
-  --velvet-950: #1c1126;
-  --velvet-900: #2c1a3d;
-  --velvet-800: #3a2451;
-  --velvet-700: #4b3067;
+  /* Brand palette — teal & gold, matching the style guide's secondary swatch */
+  --velvet-950: #04262a;
+  --velvet-900: #004f55;
+  --velvet-800: #0d6169;
+  --velvet-700: #1c7a82;
 
   --gold-300: #ecd9a6;
   --gold-400: #ddc082;
@@ -20,10 +20,10 @@
   --paper: #faf6ef;
   --paper-dim: #f3ecdf;
 
-  --ink: #241a2e;
-  --ink-soft: #6a5e76;
-  --line: rgba(44, 26, 61, 0.1);
-  --line-strong: rgba(44, 26, 61, 0.2);
+  --ink: #17262a;
+  --ink-soft: #5c7679;
+  --line: rgba(0, 79, 85, 0.1);
+  --line-strong: rgba(0, 79, 85, 0.2);
 
   /* Typography */
   --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
@@ -45,10 +45,10 @@
   --radius-pill: 999px;
 
   /* Shadows */
-  --shadow-xs: 0 1px 2px rgba(28, 17, 38, 0.06);
-  --shadow-sm: 0 2px 10px rgba(28, 17, 38, 0.08);
-  --shadow-md: 0 10px 28px rgba(28, 17, 38, 0.12);
-  --shadow-lg: 0 24px 56px rgba(28, 17, 38, 0.2);
+  --shadow-xs: 0 1px 2px rgba(4, 38, 42, 0.06);
+  --shadow-sm: 0 2px 10px rgba(4, 38, 42, 0.08);
+  --shadow-md: 0 10px 28px rgba(4, 38, 42, 0.12);
+  --shadow-lg: 0 24px 56px rgba(4, 38, 42, 0.2);
   --shadow-gold: 0 10px 24px rgba(198, 161, 91, 0.35);
 
   /* Motion */
@@ -79,7 +79,7 @@ body {
   background: var(--paper);
   background-image:
     radial-gradient(60rem 40rem at 90% -10%, rgba(198, 161, 91, 0.14), transparent 60%),
-    radial-gradient(50rem 36rem at -10% 20%, rgba(44, 26, 61, 0.08), transparent 60%);
+    radial-gradient(50rem 36rem at -10% 20%, rgba(0, 79, 85, 0.08), transparent 60%);
   background-attachment: fixed;
   background-repeat: no-repeat;
   -webkit-font-smoothing: antialiased;
@@ -208,8 +208,13 @@ a:hover {
 
 .brand-mark {
   display: inline-flex;
-  color: var(--gold-600);
   transition: transform var(--transition-fast);
+}
+
+.brand-mark-img {
+  height: 36px;
+  width: auto;
+  display: block;
 }
 
 .site-brand:hover .brand-mark {
@@ -290,14 +295,14 @@ a:hover {
 }
 
 .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%232c1a3d' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%23004f55' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
 .navbar-collapse {
   transition: max-height var(--transition);
 }
 
-@media (max-width: 991.98px) {
+@media (max-width: 1399.98px) {
   .navbar-collapse {
     background: var(--paper);
     border: 1px solid var(--line);
@@ -421,6 +426,31 @@ a:hover {
   pointer-events: none;
 }
 
+.hero-logo-right {
+  display: none;
+  position: absolute;
+  top: 50%;
+  right: 3rem;
+  transform: translateY(-50%);
+  width: clamp(20rem, 30vw, 34rem);
+  height: auto;
+  opacity: 0.92;
+  pointer-events: none;
+}
+
+@media (min-width: 992px) {
+  .hero-logo-right {
+    display: block;
+  }
+}
+
+.hero-photo-framed {
+  width: clamp(16rem, 24vw, 27rem);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(198, 161, 91, 0.45);
+  box-shadow: var(--shadow-lg);
+}
+
 .hero-stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
@@ -491,14 +521,6 @@ a:hover {
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid var(--line);
   box-shadow: var(--shadow-sm);
-  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
-}
-
-.program-card:hover,
-.score-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--gold-400);
 }
 
 .score-card {
@@ -516,13 +538,6 @@ a:hover {
   background: linear-gradient(160deg, var(--blush-100), var(--blush-50));
   color: var(--gold-600);
   font-size: 1.2rem;
-  transition: transform var(--transition), background var(--transition);
-}
-
-.score-card:hover .score-icon {
-  transform: scale(1.08) rotate(-4deg);
-  background: linear-gradient(160deg, var(--gold-300), var(--gold-400));
-  color: var(--velvet-950);
 }
 
 .program-badge {
@@ -542,7 +557,7 @@ a:hover {
 }
 
 .program-badge.closed {
-  background: rgba(44, 26, 61, 0.1);
+  background: rgba(0, 79, 85, 0.1);
   color: var(--velvet-900);
 }
 
@@ -555,13 +570,6 @@ a:hover {
   border: 1px solid var(--line);
   font-size: 0.78rem;
   color: var(--ink-soft);
-  transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
-}
-
-.county-chip:hover {
-  background: var(--gold-300);
-  border-color: var(--gold-500);
-  color: var(--velvet-950);
 }
 
 /* ==========================================================================
@@ -587,6 +595,7 @@ a:hover {
   width: 100%;
   height: 260px;
   object-fit: cover;
+  object-position: center 12%;
   display: block;
   transition: transform var(--transition-slow);
 }
@@ -655,6 +664,7 @@ a:hover {
   width: 100%;
   max-height: 520px;
   object-fit: cover;
+  object-position: center 12%;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
 }
@@ -785,19 +795,14 @@ a:hover {
 
   .btn,
   .titleholder-card,
-  .program-card,
-  .score-card,
   .collection-card-image,
-  .score-icon,
   .brand-mark {
     transition: none !important;
     animation: none !important;
   }
 
   .btn:hover,
-  .titleholder-card:hover,
-  .program-card:hover,
-  .score-card:hover {
+  .titleholder-card:hover {
     transform: none !important;
   }
 }

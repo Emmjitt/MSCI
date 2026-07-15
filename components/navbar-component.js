@@ -12,14 +12,11 @@ export default {
   },
   template: `
     <header class="site-header">
-      <nav class="navbar navbar-expand-lg site-navbar">
+      <nav class="navbar navbar-expand-xxl site-navbar">
         <div class="container">
           <router-link class="navbar-brand site-brand" to="/" @click="closeMenu">
             <span class="brand-mark" aria-hidden="true">
-              <svg viewBox="0 0 48 48" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6 34 L12 14 L18 26 L24 10 L30 26 L36 14 L42 34 Z" fill="currentColor" />
-                <rect x="6" y="34" width="36" height="3.5" rx="1" fill="currentColor" />
-              </svg>
+              <img src="./assets/images/MSCI-Logo.png" alt="" class="brand-mark-img" />
             </span>
             <span class="brand-text">
               <span class="brand-line1">Miss Central Indiana</span>
@@ -47,8 +44,23 @@ export default {
               <li class="nav-item">
                 <router-link class="nav-link" to="/about" @click="closeMenu">About &amp; Eligibility</router-link>
               </li>
+              <li class="nav-item">
+                <router-link class="nav-link" to="/shining-stars" @click="closeMenu">Shining Stars Program</router-link>
+              </li>
+              <li class="nav-item">
+                <router-link class="nav-link" to="/alumni" @click="closeMenu">Alumni</router-link>
+              </li>
+              <li class="nav-item">
+                <router-link class="nav-link" to="/team" @click="closeMenu">Meet the Team</router-link>
+              </li>
+              <li class="nav-item">
+                <router-link class="nav-link" to="/donors" @click="closeMenu">Donors</router-link>
+              </li>
+              <li class="nav-item">
+                <router-link class="nav-link" to="/donate" @click="closeMenu">Donate</router-link>
+              </li>
               <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
-                <a class="btn btn-gold btn-sm w-100" href="mailto:info@misscentralindiana.org">Contact Us</a>
+                <a class="btn btn-gold btn-sm w-100" href="mailto:misscentralindiana23@gmail.com">Contact Us</a>
               </li>
             </ul>
           </div>
