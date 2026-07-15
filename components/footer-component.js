@@ -32,7 +32,6 @@ export default {
             </p>
             <div class="d-flex gap-3 mt-3 fs-5">
               <a href="https://www.facebook.com/misscentralindiana" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-              <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
             </div>
           </div>
         </div>
