@@ -114,7 +114,7 @@ export default {
               <div class="score-card">
                 <div class="score-icon"><i class="bi bi-star"></i></div>
                 <h3 class="h6 mb-1">Talent</h3>
-                <p class="text-secondary small mb-0">A 90-second showcase of each contestant's HERStory.</p>
+                <p class="text-secondary small mb-0">Each contestant has 90 seconds to showcase her talent.</p>
               </div>
             </div>
             <div class="col-sm-6 col-lg-4">
